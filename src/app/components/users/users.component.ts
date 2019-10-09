@@ -1,21 +1,22 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
-import { IUser } from '../../models/user.interface';
+import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
+import {User} from "../../models/user";
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  selector: "app-users",
+  templateUrl: "./users.component.html",
+  styleUrls: ["./users.component.css"]
 })
 export class UsersComponent implements OnInit {
   @Input()
-  users: IUser[];
+  users: User[];
   @Output()
   userSelected: EventEmitter<number> = new EventEmitter();
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   navigateToUser(id: number) {
     this.userSelected.emit(id);
