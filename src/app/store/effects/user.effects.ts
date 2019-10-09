@@ -21,7 +21,7 @@ export class UserEffects {
     map(action => action.payload),
     withLatestFrom(this.store.pipe(select(selectUserList))),
     switchMap(([id, users]) => {
-      const selectedUser = users.find(user => user.id === id);
+      const selectedUser = users.find(user => user.id == id);
       return of(new GetUserSuccessAction(selectedUser));
     })
   );
