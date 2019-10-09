@@ -18,7 +18,7 @@ export class ConfigEffects {
     ofType<GetConfigAction>(ConfigActionEnum.GetConfig),
     switchMap(() => this.configService.getConfig()),
     switchMap((config: Config) => {
-      return of(new GetConfigSuccessAction(config);
+      return of(new GetConfigSuccessAction(config));
     })
   );
 }

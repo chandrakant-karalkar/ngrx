@@ -1,6 +1,5 @@
 import {ConfigState, initialConfigState} from "../state/config.state";
-import {ConfigActions} from "../actions/config/config.actions";
-import {ConfigActionEnum} from "../actions/config/config-action.enum";
+import {ConfigActionEnum, ConfigActions} from "../actions/config/config.actions";
 
 export const configReducers = (state = initialConfigState, action: ConfigActions): ConfigState => {
   switch (action.type) {
